@@ -1,7 +1,5 @@
 
 import IbanValidator from "@/components/IbanValidator";
-import { CheckCircle, Info, HelpCircle } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Index = () => {
   return (
@@ -13,7 +11,6 @@ const Index = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        {/* Hero Section */}
         <section className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Validate Your International Bank Account Number
@@ -24,30 +21,25 @@ const Index = () => {
           
           <div className="flex justify-center flex-wrap gap-4 mb-8">
             <div className="flex items-center bg-blue-50 px-4 py-2 rounded-full text-blue-700">
-              <CheckCircle className="h-5 w-5 mr-2" />
               <span>No registration required</span>
             </div>
             <div className="flex items-center bg-blue-50 px-4 py-2 rounded-full text-blue-700">
-              <CheckCircle className="h-5 w-5 mr-2" />
               <span>Data never stored</span>
             </div>
             <div className="flex items-center bg-blue-50 px-4 py-2 rounded-full text-blue-700">
-              <CheckCircle className="h-5 w-5 mr-2" />
               <span>Instant verification</span>
             </div>
           </div>
         </section>
 
-        {/* Validator Section */}
         <section className="max-w-4xl mx-auto mb-16 flex flex-col md:flex-row gap-8 items-start">
-          <div className="w-full md:w-1/2 bg-white rounded-lg p-6 shadow-md">
+          <div className="w-full md:w-1/2">
             <IbanValidator />
           </div>
           
           <div className="w-full md:w-1/2">
             <div className="bg-blue-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <Info className="h-5 w-5 mr-2 text-blue-600" />
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 Why validate your IBAN?
               </h3>
               <ul className="space-y-3 text-gray-700">
@@ -70,51 +62,6 @@ const Index = () => {
               </ul>
             </div>
           </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="max-w-4xl mx-auto mb-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <HelpCircle className="h-5 w-5 mr-2 text-blue-600" />
-            Frequently Asked Questions
-          </h2>
-          
-          <Accordion type="single" collapsible className="bg-white shadow-sm rounded-lg">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="px-6">What is an IBAN?</AccordionTrigger>
-              <AccordionContent className="px-6 text-gray-700">
-                An International Bank Account Number (IBAN) is a standardized international numbering system developed to identify bank accounts across national borders. It was designed to minimize the risk of transcription errors and facilitate international payments.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="px-6">How is an IBAN structured?</AccordionTrigger>
-              <AccordionContent className="px-6 text-gray-700">
-                An IBAN consists of up to 34 alphanumeric characters: a two-letter country code, followed by two check digits, and finally a country-specific Basic Bank Account Number (BBAN) which includes the domestic bank account number, branch identifier, and potential routing information.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-3">
-              <AccordionTrigger className="px-6">Is my data secure?</AccordionTrigger>
-              <AccordionContent className="px-6 text-gray-700">
-                Yes, our IBAN validation service processes your data locally in your browser. We don't store, transmit, or share your IBAN or any other information you enter. All validation happens on your device, providing complete privacy.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-4">
-              <AccordionTrigger className="px-6">What countries use IBAN?</AccordionTrigger>
-              <AccordionContent className="px-6 text-gray-700">
-                Most European countries use IBAN, along with several Middle Eastern, North African, and Caribbean nations. Major economies like the United States, Canada, Australia, and most of Asia don't use the IBAN system but may process payments to IBAN countries.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-5">
-              <AccordionTrigger className="px-6">How does IBAN validation work?</AccordionTrigger>
-              <AccordionContent className="px-6 text-gray-700">
-                Our validator checks several aspects of your IBAN: correct length for the specified country, proper country code format, and passes the MOD-97 verification algorithm (ISO 7064) which validates the check digits. This helps identify most input errors and typos.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
         </section>
       </main>
 
